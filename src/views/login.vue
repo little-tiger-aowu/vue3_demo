@@ -8,8 +8,9 @@
 </template>
 
 <script lang="ts">
-    import {defineComponent} from 'vue';
+    import {defineComponent, onMounted} from 'vue';
     import { useStore } from "vuex"
+    import { deterUserIsForm } from '../api/path'
     export default defineComponent({
         setup() {
             const store = useStore()
@@ -17,8 +18,10 @@
                 // 在这里提交了mutations中的addCount方法
                 store.commit("addCount", 1)
             }
+            onMounted(()=>{
+                deterUserIsForm()
+            })
             return { store, addCount };
-
         },
     });
 </script>

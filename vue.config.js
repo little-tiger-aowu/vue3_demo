@@ -9,5 +9,6 @@ module.exports = defineConfig({
         resolvers: [VantResolver()],
       }),
     ],
+    resolve: { extensions: [".ts", ".tsx", ".js", ".json"] },
   },
 })
